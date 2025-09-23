@@ -5,6 +5,8 @@ import { Starfield } from "@/components/Starfield";
 import { SpaceHeader } from "@/components/SpaceHeader";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { ContactSection } from "@/components/ContactSection";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -33,6 +35,8 @@ export default function Home() {
       {/* Hero section */}
       <HeroSection />
       <AboutSection />
+      <ProjectsSection />
+      <ContactSection />
     </main>
   );
 }
