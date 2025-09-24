@@ -31,12 +31,7 @@ export default function Home() {
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
       />
-
-      {/* Hero section */}
       <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ContactSection />
     </main>
   );
 }
