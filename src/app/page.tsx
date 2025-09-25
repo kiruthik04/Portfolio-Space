@@ -3,10 +3,8 @@
 import { useState } from "react";
 import { Starfield } from "@/components/Starfield";
 import { SpaceHeader } from "@/components/SpaceHeader";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { ContactSection } from "@/components/ContactSection";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -31,7 +29,8 @@ export default function Home() {
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
       />
-      <HeroSection />
+      <Skills />
+      <Experience />
     </main>
   );
 }
