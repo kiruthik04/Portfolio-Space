@@ -36,13 +36,7 @@ export const ProjectsSection = () => {
       tech: ["Python", "TensorFlow", "React", "WebGL"],
       status: "Development",
     },
-    {
-      title: "Stellar API",
-      description:
-        "High-performance GraphQL API with microservices architecture and real-time subscriptions.",
-      tech: ["GraphQL", "Docker", "PostgreSQL", "Redis"],
-      status: "Live",
-    },
+
   ];
 
   return (
@@ -59,9 +53,8 @@ export const ProjectsSection = () => {
 
       <div className="container mx-auto px-6">
         <div
-          className={`transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="font-space text-4xl md:text-6xl font-bold text-star-white mb-16 text-center tracking-wide">
             <span className="text-cosmic-pink">Projects</span>
@@ -71,20 +64,18 @@ export const ProjectsSection = () => {
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group relative transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`group relative transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="relative p-8 rounded-2xl border border-cosmic-blue/20 bg-card/30 backdrop-blur-sm hover:border-cosmic-pink/50 hover:shadow-purple transition-all duration-500 group-hover:transform group-hover:scale-105">
                   {/* Project status indicator */}
                   <div className="absolute top-4 right-4">
                     <div
-                      className={`px-3 py-1 rounded-full text-xs font-body uppercase tracking-wide ${
-                        project.status === "Live"
+                      className={`px-3 py-1 rounded-full text-xs font-body uppercase tracking-wide ${project.status === "Live"
                           ? "bg-cosmic-blue/20 text-cosmic-blue border border-cosmic-blue/30"
                           : "bg-cosmic-purple/20 text-cosmic-purple border border-cosmic-purple/30"
-                      }`}
+                        }`}
                     >
                       {project.status}
                     </div>
