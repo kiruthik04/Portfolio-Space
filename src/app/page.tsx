@@ -30,7 +30,7 @@ export default function Home() {
         onSectionClick={handleSectionClick}
       />
       <Skills />
-      <Experience />
+      {/* <Experience /> */}
     </main>
   );
 }
