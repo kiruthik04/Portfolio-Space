@@ -1,71 +1,59 @@
-import { useEffect, useState } from 'react';
+"use client";
+import { motion } from "framer-motion";
+import { heroData } from "../constants/index.js";
 
-export const HeroSection = () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setIsVisible(true), 500);
-        return () => clearTimeout(timer);
-    }, []);
-
+export default function HeroSection() {
     return (
-        <section
-            id="home"
-            className="min-h-screen flex items-center justify-center relative overflow-hidden"
-        >
-            {/* Floating particles */}
-            <div className="absolute inset-0 z-10">
-                {[...Array(20)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-1 h-1 bg-cosmic-blue rounded-full opacity-30"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animation: `float ${6 + Math.random() * 4}s infinite`,
-                            animationDelay: `${Math.random() * 6}s`,
-                        }}
-                    />
-                ))}
-            </div>
+        <section className="relative flex flex-col justify-center items-end text-right min-h-screen bg-transparent overflow-hidden px-6 md:px-25">
 
-            <div className="text-center z-20 relative px-6">
-                <div
-                    className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                        }`}
-                >
-                    <h1
-                        className="font-space text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-wide"
-                        style={{
-                            background: 'linear-gradient(90deg, #7f5af0, #0ea5e9, #14b8a6)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                        }}
+            {/* Background glows */}
+            <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-violet-500/30 rounded-full blur-[180px]"></div>
+            <div className="absolute bottom-10 right-20 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[160px]"></div>
+
+            {/* Title */}
+            <motion.h1
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-6xl font-extrabold leading-tight text-white max-w-3xl"
+            >
+                Shaping <span className="text-violet-500">{heroData.highlight.part1}</span>{" "}
+                into <span className="text-blue-400">{heroData.highlight.part2}</span> that{" "}
+                <span className="text-violet-500">{heroData.highlight.part3}</span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl"
+            >
+                {heroData.subtitle}
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="mt-10 flex gap-5 justify-end"
+            >
+                {heroData.ctas.map((cta, index) => (
+                    <a
+                        key={index}
+                        href={cta.link}
+                        target={cta.link.startsWith("http") ? "_blank" : "_self"}
+                        rel="noopener noreferrer"
+                        className={`px-6 py-3 rounded-lg font-semibold transition duration-300 shadow-lg ${cta.type === "primary"
+                                ? "bg-violet-600 hover:bg-violet-700 text-white"
+                                : "border border-gray-500 text-white hover:bg-gray-800"
+                            }`}
                     >
-                        Kiruthik Varshan
-                    </h1>
-
-                    <div className="relative inline-block mt-2">
-                        <h2 className="font-body text-xl md:text-2xl lg:text-3xl text-cosmic-silver font-light tracking-[0.3em] uppercase">
-                            Web Developer
-                        </h2>
-                        <div
-                            className="absolute bottom-0 left-0 h-0.5"
-                            style={{
-                                width: '100%',
-                                background: 'linear-gradient(90deg, #7f5af0, #0ea5e9)',
-                            }}
-                        />
-                    </div>
-
-                </div>
-            </div>
-
-            {/* Background gradient overlay */}
-            <div
-                className="absolute inset-0"
-                style={{ background: 'radial-gradient(circle, #000000, #0b0b0b)', opacity: 0.5 }}
-            />
+                        {cta.label}
+                    </a>
+                ))}
+            </motion.div>
         </section>
     );
-};
+}

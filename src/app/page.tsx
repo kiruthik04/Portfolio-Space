@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Starfield } from "@/components/Starfield";
 import { SpaceHeader } from "@/components/SpaceHeader";
+import HeroSection from "@/components/HeroSection";
 import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -21,16 +21,14 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-black text-white">
-      {/* Starry background */}
       <Starfield />
-
-      {/* Space-themed header */}
       <SpaceHeader
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
       />
+      <HeroSection />
       <Skills />
-      {/* <Experience /> */}
+      
     </main>
   );
 }

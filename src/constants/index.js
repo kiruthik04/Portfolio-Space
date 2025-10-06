@@ -8,25 +8,31 @@ export const navLinks = [
     { name: "Contact", link: "#contact" },
 ];
 
-// 🔠 Animated Words with Images
-export const words = [
-    { text: "Ideas", imgPath: "/images/ideas.svg" },
-    { text: "Concepts", imgPath: "/images/concepts.svg" },
-    { text: "Designs", imgPath: "/images/designs.svg" },
-    { text: "Code", imgPath: "/images/code.svg" },
-    { text: "Ideas", imgPath: "/images/ideas.svg" },
-    { text: "Concepts", imgPath: "/images/concepts.svg" },
-    { text: "Designs", imgPath: "/images/designs.svg" },
-    { text: "Code", imgPath: "/images/code.svg" },
+// constants/index.js
+
+const skillsData = [
+    { name: "HTML", imgPath: "/images/skills/html.svg" },
+    { name: "CSS", imgPath: "/images/skills/css.svg" },
+    { name: "JavaScript", imgPath: "/images/skills/javascript.svg" },
+    { name: "TypeScript", imgPath: "/images/skills/typescript.svg" },
+    { name: "React", imgPath: "/images/skills/react.svg" },
+    { name: "Next.js", imgPath: "/images/skills/next.svg" },
+    { name: "Tailwind", imgPath: "/images/skills/tailwind.svg" },
+    { name: "MongoDB", imgPath: "/images/skills/mongodb.svg" },
+    { name: "MySQL", imgPath: "/images/skills/mysql.svg" },
+    { name: "Git", imgPath: "/images/skills/git.svg" },
+    { name: "AWS", imgPath: "/images/skills/aws.svg" },
+    { name: "Bootstrap", imgPath: "/images/skills/bootstrap.svg" },
+    { name: "Docker", imgPath: "/images/skills/docker.svg" },
+    { name: "Figma", imgPath: "/images/skills/figma.svg" },
+    { name: "Firebase", imgPath: "/images/skills/firebase.svg" },
+    { name: "Python", imgPath: "/images/skills/python.svg" },
+    { name: "Node.js", imgPath: "/images/skills/nodejs.svg" },
+    { name: "Express.js", imgPath: "/images/skills/expressjs.svg" },
 ];
 
-// 🔢 Counter Section
-export const counterItems = [
-    { value: 5, suffix: "", label: "Completed Projects" },
-    { value: 3, suffix: "", label: "Certifications" },
-    { value: 3, suffix: "", label: "CI/CD Pipelines Built" },
-    { value: 6, suffix: "", label: "DevOps Tools Used" },
-];
+export { skillsData };
+
 
 // 🖼️ Logo Icons
 export const logoIconsList = [
@@ -191,4 +197,30 @@ export const socialLinks = {
     insta: "https://instagram.com/your_actual_username",
     git: "https://github.com/Manisankarrr",
     linkedin: "https://linkedin.com/in/your_actual_profile_id",
+};
+
+export const heroData = {
+    highlight: {
+        part1: "Ideas",
+        part2: "Reality",
+        part3: "Impact"
+    },
+    subtitle: "We transform innovative ideas into impactful solutions, combining creativity with technology.",
+    ctas: [
+        {
+            label: "Get Started",
+            link: "/get-started",
+            type: "primary"
+        },
+        {
+            label: "Learn More",
+            link: "/about",
+            type: "secondary"
+        },
+        {
+            label: "GitHub",
+            link: "https://github.com/yourprofile",
+            type: "secondary"
+        }
+    ]
 };
