@@ -219,7 +219,7 @@ export const heroData = {
         },
         {
             label: "GitHub",
-            link: "https://github.com/yourprofile",
+            link: "https://github.com/kiruthik04",
             type: "secondary"
         }
     ]
