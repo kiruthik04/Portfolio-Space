@@ -193,11 +193,7 @@ export const socialImgs = [
     { name: "linkedin", imgPath: "/images/linkedin.png" },
 ];
 
-export const socialLinks = {
-    insta: "https://instagram.com/your_actual_username",
-    git: "https://github.com/Manisankarrr",
-    linkedin: "https://linkedin.com/in/your_actual_profile_id",
-};
+
 
 export const heroData = {
     highlight: {
